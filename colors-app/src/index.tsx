@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Application from './components/application';
+import { ColorProvider } from './context';
 
 import { makeServer } from './api';
 
@@ -15,6 +16,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Application />
+    <ColorProvider>
+      <Application />
+    </ColorProvider>
   </React.StrictMode>,
 );
