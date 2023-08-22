@@ -1,9 +1,6 @@
 import { ComponentPropsWithoutRef, useId } from 'react';
 
-type LabeledInputProps = Omit<
-  ComponentPropsWithoutRef<'input'>,
-  'autoFocus'
-> & {
+type LabeledInputProps = Omit<ComponentPropsWithoutRef<'input'>, 'auto'> & {
   label: string;
 };
 
