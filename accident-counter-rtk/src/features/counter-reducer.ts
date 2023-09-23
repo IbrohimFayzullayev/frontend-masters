@@ -15,7 +15,11 @@ type CounterAction =
   | ReturnType<typeof decrement>
   | ReturnType<typeof reset>;
 
-const counterReducer = createReducer({ count: 0 }, (builder) => {});
+const counterReducer = createReducer({ count: 0 }, (builder) => {
+  builder.addCase(increment, (state, action) => {
+    state.count += action.payload;
+  });
+});
 
 export const reducer = (state: CounterState, action: CounterAction) => {
   if (action.type === increment.type) {
