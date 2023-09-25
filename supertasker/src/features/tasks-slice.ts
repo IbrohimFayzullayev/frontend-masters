@@ -8,7 +8,7 @@ const initialState: TaskState = {
   entities: [],
 };
 
-const taskSlice = createSlice({
+const tasksSlice = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
@@ -18,3 +18,8 @@ const taskSlice = createSlice({
     removeTask: (state) => state,
   },
 });
+
+export const tasksReducer = tasksSlice.reducer;
+export const { addTask, removeTask } = tasksSlice.actions;
+
+export default tasksSlice;
